@@ -4,14 +4,58 @@ import { Clock, Key, Shield, Phone, MessageCircle, Mail } from 'lucide-react'
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import { MobileMenu } from "@/components/ui/mobile-menu"
+import Script from "next/script"
 
 export default function Home() {
   const whatsappLink = "https://wa.me/+33769308074?text=Bonjour%2C%20j'ai%20besoin%20d'un%20service%20de%20serrurier"
   const phoneNumber = "+33769308074"
   const emailAddress = "contact@cannesserrurier.fr"
 
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "Serrurier Cannes",
+    "image": "https://cannesserrurier.fr/cannesserrurier.fr_-_logo.png",
+    "description": "Service de serrurerie professionnel à Cannes. Disponible 24/7, prix fixe, experts de confiance.",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Cannes",
+      "addressRegion": "Alpes-Maritimes",
+      "addressCountry": "FR"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": 43.5528,
+      "longitude": 7.0174
+    },
+    "url": "https://cannesserrurier.fr",
+    "telephone": "+33769308074",
+    "email": "contact@cannesserrurier.fr",
+    "openingHoursSpecification": {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": [
+        "Monday",
+        "Tuesday",
+        "Wednesday",
+        "Thursday",
+        "Friday",
+        "Saturday",
+        "Sunday"
+      ],
+      "opens": "00:00",
+      "closes": "23:59"
+    },
+    "priceRange": "€€"
+  }
+
   return (
     <div className="min-h-screen bg-white">
+      {/* Add the Script component right here, before the header */}
+      <Script
+        id="json-ld"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       {/* Header */}
       <header className="container mx-auto px-4 py-6">
         <div className="flex items-center justify-between">

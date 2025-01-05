@@ -1,0 +1,16 @@
+{
+    "name": "Serrurier Cannes",
+    "short_name": "Serrurier Cannes",
+    "description": "Service de serrurerie professionnel à Cannes",
+    "start_url": "/",
+    "display": "standalone",
+    "background_color": "#ffffff",
+    "theme_color": "#ff0000",
+    "icons": [
+      {
+        "src": "/cannesserrurier.fr_-_logo.png",
+        "sizes": "300x100",
+        "type": "image/png"
+      }
+    ]
+  }

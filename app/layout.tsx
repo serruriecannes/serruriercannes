@@ -1,13 +1,48 @@
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
-import Script from 'next/script'  // Add this import
+import Script from 'next/script'
 import './globals.css'
 
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
   title: 'Serrurier Cannes - Service de Serrurerie 24/7',
-  description: 'Service de serrurerie professionnel à Cannes. Disponible 24/7, prix fixe, experts de confiance.',
+  description: 'Service de serrurerie professionnel à Cannes. Disponible 24/7, prix fixe, experts de confiance. Intervention rapide, devis gratuit.',
+  keywords: 'serrurier, cannes, serrurerie, dépannage, urgence, 24/7, clés, serrure, porte',
+  authors: [{ name: 'Serrurier Cannes' }],
+  creator: 'Serrurier Cannes',
+  publisher: 'Serrurier Cannes',
+  formatDetection: {
+    email: false,
+    address: false,
+    telephone: false,
+  },
+  metadataBase: new URL('https://cannesserrurier.fr'),
+  alternates: {
+    canonical: '/',
+  },
+  openGraph: {
+    title: 'Serrurier Cannes - Service de Serrurerie 24/7',
+    description: 'Service de serrurerie professionnel à Cannes. Disponible 24/7, prix fixe, experts de confiance.',
+    url: 'https://cannesserrurier.fr',
+    siteName: 'Serrurier Cannes',
+    locale: 'fr_FR',
+    type: 'website',
+    images: [
+      {
+        url: '/cannesserrurier.fr_-_logo.png',
+        width: 300,
+        height: 100,
+        alt: 'Serrurier Cannes Logo',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Serrurier Cannes - Service de Serrurerie 24/7',
+    description: 'Service de serrurerie professionnel à Cannes. Disponible 24/7, prix fixe, experts de confiance.',
+    images: ['/cannesserrurier.fr_-_logo.png'],
+  },
   viewport: {
     width: 'device-width',
     initialScale: 1,
@@ -24,6 +59,9 @@ export default function RootLayout({
   return (
     <html lang="fr">
       <head>
+      <link rel="manifest" href="/manifest.json" />
+      <link rel="icon" href="/favicon.ico" />
+      <link rel="apple-touch-icon" href="/cannesserrurier.fr_-_logo.png" />
         {/* Google Analytics */}
         <Script
           src="https://www.googletagmanager.com/gtag/js?id=G-E06QJGZDPM"
