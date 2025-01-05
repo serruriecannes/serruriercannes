@@ -1,6 +1,6 @@
 import Image from "next/image"
 import Link from "next/link"
-import { Clock, Key, Shield, Phone, MessageCircle } from 'lucide-react'
+import { Clock, Key, Shield, Phone, MessageCircle, Mail } from 'lucide-react'
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import { MobileMenu } from "@/components/ui/mobile-menu"
@@ -21,12 +21,12 @@ export default function Home() {
               alt="Cannes Serrurier"
               width={300}
               height={100}
-              className="h-12 w-auto sm:h-16" // Adjusted size for mobile
+              className="h-12 w-auto sm:h-16"
             />
             <span className="text-xl sm:text-2xl font-bold text-gray-800">Serrurier Cannes</span>
           </div>
           
-          <div className="hidden sm:flex gap-4">
+          <div className="hidden sm:flex flex-col md:flex-row gap-4">  {/* CHANGED THIS LINE */}
             <Link href={`tel:${phoneNumber}`}>
               <Button className="bg-red-600 text-white hover:bg-red-700">
                 <Phone className="w-5 h-5 mr-2" />
@@ -41,11 +41,14 @@ export default function Home() {
             </Link>
           </div>
           
-          <MobileMenu 
-            phoneNumber={phoneNumber}
-            emailAddress={emailAddress}
-            whatsappLink={whatsappLink}
-          />
+          {/* Mobile menu trigger */}
+          <div className="md:hidden">
+            <MobileMenu 
+              phoneNumber={phoneNumber}
+              emailAddress={emailAddress}
+              whatsappLink={whatsappLink}
+            />
+          </div>
         </div>
       </header>
 
@@ -79,21 +82,18 @@ export default function Home() {
             <p className="text-2xl font-semibold mb-6">
               Temps de réponse : Immédiat (max 10 Minutes)
             </p>
-            <div className="flex justify-center gap-4">
-              <Link 
-                href={whatsappLink}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <Button className="text-lg bg-[#25D366] hover:bg-[#20BA5C]">
+            {/* Hero section buttons */}
+            <div className="flex flex-col sm:flex-row gap-4">  {/* FIXED HERE */}
+              <Link href={whatsappLink} target="_blank" rel="noopener noreferrer">
+                <Button className="bg-[#25D366] hover:bg-[#20BA5C] text-white w-full sm:w-auto">
                   <MessageCircle className="w-5 h-5 mr-2" />
                   Contactez-nous sur WhatsApp
                 </Button>
               </Link>
               <Link href={`mailto:${emailAddress}`}>
-                <Button variant="outline" className="text-lg bg-white text-gray-800 hover:bg-gray-100">
-                  <MessageCircle className="w-5 h-5 mr-2" />
-                  Contact par Email
+                <Button variant="outline" className="border-red-600 text-red-600 hover:bg-red-50 w-full sm:w-auto">
+                  <Mail className="w-5 h-5 mr-2" />
+                  Contact par email
                 </Button>
               </Link>
             </div>
