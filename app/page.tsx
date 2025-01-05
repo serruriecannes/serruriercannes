@@ -3,6 +3,7 @@ import Link from "next/link"
 import { Clock, Key, Shield, Phone, MessageCircle } from 'lucide-react'
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
+import { MobileMenu } from "@/components/ui/mobile-menu"
 
 export default function Home() {
   const whatsappLink = "https://wa.me/+33769308074?text=Bonjour%2C%20j'ai%20besoin%20d'un%20service%20de%20serrurier"
@@ -20,38 +21,39 @@ export default function Home() {
               alt="Cannes Serrurier"
               width={300}
               height={100}
-              className="h-16 w-auto"
+              className="h-12 w-auto sm:h-16" // Adjusted size for mobile
             />
-            <span className="text-2xl font-bold text-gray-800">Serrurier Cannes</span>
+            <span className="text-xl sm:text-2xl font-bold text-gray-800">Serrurier Cannes</span>
           </div>
+          
           <div className="hidden sm:flex gap-4">
-            <Link 
-              href={`tel:${phoneNumber}`}
-              className="hidden sm:block"
-            >
+            <Link href={`tel:${phoneNumber}`}>
               <Button className="bg-red-600 text-white hover:bg-red-700">
                 <Phone className="w-5 h-5 mr-2" />
                 Appelez-nous
               </Button>
             </Link>
-            <Link 
-              href={`mailto:${emailAddress}`}
-              className="hidden sm:block"
-            >
+            <Link href={`mailto:${emailAddress}`}>
               <Button variant="outline" className="border-red-600 text-red-600 hover:bg-red-50">
                 <MessageCircle className="w-5 h-5 mr-2" />
                 Email
               </Button>
             </Link>
           </div>
+          
+          <MobileMenu 
+            phoneNumber={phoneNumber}
+            emailAddress={emailAddress}
+            whatsappLink={whatsappLink}
+          />
         </div>
       </header>
 
       {/* Hero Section */}
       <section className="relative h-screen">
         <Image
-          src="https://neuraai.blob.core.windows.net/uploads/2025-01-03_01.33.54_y8oknaj5b92moe49.png"
-          alt="Service de Serrurerie"
+          src="/hero_bg.png"
+          alt="Service de Serrurerie Cannes"
           fill
           className="object-cover"
           priority
@@ -59,7 +61,7 @@ export default function Home() {
         <div className="absolute inset-0 bg-black bg-opacity-60"></div>
         <div className="absolute inset-0 flex items-center justify-center">
           <div className="container mx-auto px-4 text-center text-white">
-            <h1 className="text-4xl md:text-5xl font-bold mb-4 space-y-4">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 space-y-4">
               <div>Service de Serrurerie</div>
               <div>Dépannage 7j/7 24h/24</div>
             </h1>
@@ -101,7 +103,7 @@ export default function Home() {
 
       {/* Features Section */}
       <section className="container mx-auto px-4 py-12 md:py-24">
-        <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
+        <div className="grid gap-8 grid-cols-1 sm:grid-cols-2 lg:grid-cols-4">
           <Card>
             <CardContent className="pt-6">
               <div className="text-center space-y-4">

@@ -7,6 +7,12 @@ const inter = Inter({ subsets: ['latin'] })
 export const metadata: Metadata = {
   title: 'Serrurier Cannes - Service de Serrurerie 24/7',
   description: 'Service de serrurerie professionnel à Cannes. Disponible 24/7, prix fixe, experts de confiance.',
+  viewport: {
+    width: 'device-width',
+    initialScale: 1,
+    maximumScale: 1,
+    userScalable: false,
+  },
 }
 
 export default function RootLayout({
