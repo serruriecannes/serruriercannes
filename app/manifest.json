@@ -8,8 +8,8 @@
     "theme_color": "#ff0000",
     "icons": [
       {
-        "src": "/cannesserrurier.fr_-_logo.png",
-        "sizes": "300x100",
+        "src": "/hero-seo-bg.png",
+        "sizes": "300x200",
         "type": "image/png"
       }
     ]
