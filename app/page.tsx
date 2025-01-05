@@ -83,7 +83,7 @@ export default function Home() {
               Temps de réponse : Immédiat (max 10 Minutes)
             </p>
             {/* Hero section buttons */}
-            <div className="flex flex-col sm:flex-row gap-4">  {/* FIXED HERE */}
+            <div className="flex flex-col sm:flex-row gap-4 justify-center w-full">  {/* Added justify-center and w-full */}
               <Link href={whatsappLink} target="_blank" rel="noopener noreferrer">
                 <Button className="bg-[#25D366] hover:bg-[#20BA5C] text-white w-full sm:w-auto">
                   <MessageCircle className="w-5 h-5 mr-2" />
