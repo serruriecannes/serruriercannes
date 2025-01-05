@@ -43,12 +43,15 @@ export function MobileMenu({ phoneNumber, emailAddress, whatsappLink }: MobileMe
               {t('whatsappContact')}
             </Button>
           </Link>
-          <Link href={`mailto:${emailAddress}`} className="w-full">
-            <Button variant="outline" className="w-full border-red-600 text-red-600 hover:bg-red-50">
-              <Mail className="w-5 h-5 mr-2" />
-              {t('emailContact')}
-            </Button>
-          </Link>
+            <Link href={`mailto:${emailAddress}`} className="w-full">
+                <Button 
+                    variant="outline" 
+                    className="w-full border-red-600 text-red-600 hover:bg-red-600 hover:text-white dark:border-red-500 dark:text-white dark:hover:bg-red-600 dark:hover:text-white"
+                >
+                    <Mail className="w-5 h-5 mr-2" />
+                    {t('emailContact')}
+                </Button>
+            </Link>
         </div>
       </SheetContent>
     </Sheet>

@@ -64,7 +64,7 @@ export const dictionary = {
     },
 
     footer: {
-      rights: 'Tous droits réservés'
+      rights: 'Serrurier Cannes tous droits réservés. Développé par '
     }
   },
   en: {
@@ -127,7 +127,7 @@ export const dictionary = {
     },
 
     footer: {
-      rights: 'All rights reserved'
+      rights: 'Serrurier Cannes all rights reserved. Powered by '
     }
   }
 }

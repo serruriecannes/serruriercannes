@@ -48,7 +48,7 @@ export default function Home() {
   }
 
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-white dark:bg-black dark:text-white">
       <Script
         id="json-ld"
         type="application/ld+json"
@@ -93,7 +93,10 @@ export default function Home() {
                 </Button>
               </Link>
               <Link href={`mailto:${emailAddress}`}>
-                <Button variant="outline" className="border-red-600 text-red-600 hover:bg-red-50 w-full sm:w-auto">
+                <Button 
+                  variant="outline" 
+                  className="border-red-600 text-red-600 hover:bg-red-600 hover:text-white dark:border-red-500 dark:text-white dark:hover:bg-red-600 dark:hover:text-white w-full sm:w-auto"
+                >
                   <Mail className="w-5 h-5 mr-2" />
                   {t('emailContact')}
                 </Button>
@@ -106,7 +109,7 @@ export default function Home() {
       {/* Features Section */}
       <section className="container mx-auto px-4 py-12 md:py-24">
         <div className="grid gap-8 grid-cols-1 sm:grid-cols-2 lg:grid-cols-4">
-          <Card>
+          <Card className="dark:bg-gray-900 dark:border-gray-800">
             <CardContent className="pt-6">
               <div className="text-center space-y-4">
                 <div className="mx-auto w-40 h-40 flex items-center justify-center">
@@ -118,7 +121,7 @@ export default function Home() {
             </CardContent>
           </Card>
 
-          <Card>
+          <Card className="dark:bg-gray-900 dark:border-gray-800">
             <CardContent className="pt-6">
               <div className="text-center space-y-4">
                 <div className="mx-auto w-40 h-40 flex items-center justify-center">
@@ -130,7 +133,7 @@ export default function Home() {
             </CardContent>
           </Card>
 
-          <Card>
+          <Card className="dark:bg-gray-900 dark:border-gray-800">
             <CardContent className="pt-6">
               <div className="text-center space-y-4">
                 <div className="mx-auto w-40 h-40 flex items-center justify-center">
@@ -157,7 +160,7 @@ export default function Home() {
       </section>
 
       {/* Services Section */}
-      <section className="bg-gray-50 py-12 md:py-24">
+      <section className="bg-gray-50 py-12 md:py-24 dark:bg-gray-900">
         <div className="container mx-auto px-4">
           <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">{t('services.title')}</h2>
           <div className="grid gap-8 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
@@ -208,19 +211,19 @@ export default function Home() {
       </section>
 
       {/* About Section */}
-      <section className="bg-white py-12 md:py-24">
+      <section className="bg-white dark:bg-black py-12 md:py-24">
         <div className="container mx-auto px-4">
-          <h2 className="text-3xl md:text-4xl font-bold text-center mb-8">
+          <h2 className="text-3xl md:text-4xl font-bold text-center mb-8 text-gray-900 dark:text-white">
             {t('about.title')}
           </h2>
           <div className="max-w-3xl mx-auto text-center space-y-6">
-            <p className="text-lg text-gray-700">
+            <p className="text-lg text-gray-700 dark:text-gray-300">
               {t('about.description')}
             </p>
-            <blockquote className="text-xl italic text-gray-600">
+            <blockquote className="text-xl italic text-gray-600 dark:text-gray-400">
               "{t('about.quote1')}"
             </blockquote>
-            <blockquote className="text-xl italic text-gray-600">
+            <blockquote className="text-xl italic text-gray-600 dark:text-gray-400">
               "{t('about.quote2')}"
             </blockquote>
           </div>
@@ -228,13 +231,13 @@ export default function Home() {
       </section>
 
       {/* Contact Section */}
-      <section className="bg-gray-50 py-12 md:py-24">
+      <section className="bg-gray-50 dark:bg-gray-900 py-12 md:py-24">
         <div className="container mx-auto px-4">
-          <h2 className="text-3xl md:text-4xl font-bold text-center mb-8">
+          <h2 className="text-3xl md:text-4xl font-bold text-center mb-8 text-gray-900 dark:text-white">
             {t('contact.title')}
           </h2>
           <div className="max-w-3xl mx-auto text-center space-y-6">
-            <p className="text-lg text-gray-700">{t('contact.available')}</p>
+            <p className="text-lg text-gray-700 dark:text-gray-300">{t('contact.available')}</p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link href={`tel:${phoneNumber}`}>
                 <Button className="bg-red-600 text-white hover:bg-red-700 w-full sm:w-auto">
@@ -249,7 +252,10 @@ export default function Home() {
                 </Button>
               </Link>
               <Link href={`mailto:${emailAddress}`}>
-                <Button variant="outline" className="border-red-600 text-red-600 hover:bg-red-50 w-full sm:w-auto">
+                <Button 
+                  variant="outline" 
+                  className="border-red-600 text-red-600 hover:bg-red-600 hover:text-white dark:border-red-500 dark:text-white dark:hover:bg-red-600 dark:hover:text-white w-full sm:w-auto"
+                >
                   <Mail className="w-5 h-5 mr-2" />
                   {t('contact.email')}
                 </Button>
