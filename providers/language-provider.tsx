@@ -22,7 +22,7 @@ export function LanguageProvider({ children }: { children: React.ReactNode }) {
 
   const t = (key: string, nested = false): string => {
     const keys = key.split('.')
-    let value: any = dictionary[locale]
+    let value: any = dictionary[locale as keyof typeof dictionary]
     
     for (const k of keys) {
       if (value[k] === undefined) return key
