@@ -2,6 +2,8 @@ import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import Script from 'next/script'
 import './globals.css'
+import { useLanguage, LanguageProvider } from "@/providers/language-provider"
+import { ThemeProvider } from "@/providers/theme-provider"
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -57,11 +59,11 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="fr">
+    <html lang="fr" suppressHydrationWarning>
       <head>
-      <link rel="manifest" href="/manifest.json" />
-      <link rel="icon" href="/favicon.ico" />
-      <link rel="apple-touch-icon" href="/cannesserrurier.fr_-_logo.png" />
+        <link rel="manifest" href="/manifest.json" />
+        <link rel="icon" href="/favicon.ico" />
+        <link rel="apple-touch-icon" href="/cannesserrurier.fr_-_logo.png" />
         {/* Google Analytics */}
         <Script
           src="https://www.googletagmanager.com/gtag/js?id=G-E06QJGZDPM"
@@ -72,12 +74,17 @@ export default function RootLayout({
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
             gtag('js', new Date());
-
             gtag('config', 'G-E06QJGZDPM');
           `}
         </Script>
       </head>
-      <body className={inter.className}>{children}</body>
+      <body className={inter.className}>
+        <ThemeProvider defaultTheme="system">
+          <LanguageProvider>
+            {children}
+          </LanguageProvider>
+        </ThemeProvider>
+      </body>
     </html>
   )
 }
