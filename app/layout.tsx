@@ -32,10 +32,10 @@ export const metadata: Metadata = {
     type: 'website',
     images: [
       {
-        url: '/cannesserrurier.fr_-_logo.png',
+        url: '/hero-seo-bg.png',
         width: 300,
-        height: 100,
-        alt: 'Serrurier Cannes Logo',
+        height: 200,
+        alt: 'Serrurier Cannes Le Cannet Nice',
       },
     ],
   },
@@ -43,7 +43,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Serrurier Cannes - Service de Serrurerie 24/7',
     description: 'Service de serrurerie professionnel à Cannes. Disponible 24/7, prix fixe, experts de confiance.',
-    images: ['/cannesserrurier.fr_-_logo.png'],
+    images: ['/hero-seo-bg.png'],
   },
   viewport: {
     width: 'device-width',
@@ -63,7 +63,7 @@ export default function RootLayout({
       <head>
         <link rel="manifest" href="/manifest.json" />
         <link rel="icon" href="/favicon.ico" />
-        <link rel="apple-touch-icon" href="/cannesserrurier.fr_-_logo.png" />
+        <link rel="apple-touch-icon" href="/favicon.ico" />
         {/* Google Analytics */}
         <Script
           src="https://www.googletagmanager.com/gtag/js?id=G-E06QJGZDPM"
