@@ -78,6 +78,18 @@ export default function RootLayout({
             })(window,document,'script','dataLayer','GTM-MTRVTF26');
           `}
         </Script>
+
+        {/* Google Analytics */}
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-E06QJGZDPM', {
+              send_page_view: false // We'll send page views after consent
+            });
+          `}
+        </Script>
       </head>
       <body className={inter.className}>
         {/* Google Tag Manager (noscript) */}

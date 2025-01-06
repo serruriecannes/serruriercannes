@@ -6,35 +6,50 @@ import Link from 'next/link'
 import { Button } from './ui/button'
 import { X } from 'lucide-react'
 
-export function ConsentBanner() {
-  const { t, locale } = useLanguage()
-  const [showBanner, setShowBanner] = useState(false)
-
-  useEffect(() => {
-    // Check if user has already consented
-    const hasConsented = localStorage.getItem('cookieConsent')
-    if (!hasConsented) {
-      setShowBanner(true)
-    } else {
-      // If user has already consented, initialize GTM
-      initializeGTM()
+declare global {
+    interface Window {
+      dataLayer: any[];
+      gtag: (...args: any[]) => void;
     }
-  }, [])
-
-  const initializeGTM = () => {
-    // Push consent to dataLayer
-    window.dataLayer = window.dataLayer || [];
-    window.dataLayer.push({
-      'event': 'userConsent',
-      'consent': true
-    });
   }
-
-  const acceptConsent = () => {
-    localStorage.setItem('cookieConsent', 'true')
-    setShowBanner(false)
-    initializeGTM()
-  }
+  
+  export function ConsentBanner() {
+    const { t, locale } = useLanguage()
+    const [showBanner, setShowBanner] = useState(false)
+  
+    useEffect(() => {
+      const hasConsented = localStorage.getItem('cookieConsent')
+      if (!hasConsented) {
+        setShowBanner(true)
+      } else {
+        initializeAnalytics()
+      }
+    }, [])
+  
+    const initializeAnalytics = () => {
+      if (typeof window !== 'undefined') {
+        // Initialize GTM
+        window.dataLayer = window.dataLayer || [];
+        window.dataLayer.push({
+          'event': 'userConsent',
+          'consent': true
+        });
+  
+        // Initialize GA4
+        window.gtag?.('consent', 'update', {
+          'analytics_storage': 'granted'
+        });
+        
+        // Send initial pageview
+        window.gtag?.('event', 'page_view');
+      }
+    }
+  
+    const acceptConsent = () => {
+      localStorage.setItem('cookieConsent', 'true')
+      setShowBanner(false)
+      initializeAnalytics()
+    }
 
   if (!showBanner) return null
 
