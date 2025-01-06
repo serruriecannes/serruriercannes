@@ -5,15 +5,15 @@ export type Locale = typeof locales[number]
 
 export const dictionary = {
   fr: {
-    title: 'Serrurier Cannes - Service de Serrurerie 24/7',
+    title: 'Serrurier Cannes - Service de Serrurerie à Cannes 24/7',
     description: 'Service de serrurerie professionnel à Cannes. Disponible 24/7, prix fixe, experts de confiance.',
     callUs: 'Appelez-nous',
     email: 'Email',
     whatsappContact: 'Contactez-nous sur WhatsApp',
     emailContact: 'Contact par email',
-    responseTime: 'Temps de réponse : Immédiat (max 10 Minutes)',
+    responseTime: 'Temps de réponse : Immédiat (max 10 minutes)',
 
-    heroTitle: 'Service de Serrurerie',
+    heroTitle: 'Service de Serrurerie à Cannes',
     heroSubtitle: 'Dépannage 7j/7 24h/24',
     heroDescription: 'Service de serrurerie professionnel à Cannes. Intervention rapide, prix fixe, experts de confiance.',
     whatsappMessage: "Bonjour, j'ai besoin d'un service de serrurier",
@@ -56,7 +56,7 @@ export const dictionary = {
 
     contact: {
       title: 'Contactez-nous',
-      available: 'Disponible 24h/24, 7j/7',
+      available: 'Dépannage 24h/24, 7j/7',
       phone: 'Téléphone',
       email: 'Email',
       whatsapp: 'WhatsApp',
@@ -64,9 +64,10 @@ export const dictionary = {
     },
 
     footer: {
-      rights: 'Serrurier Cannes tous droits réservés. Développé par ',
+      rights: 'Serrurier Cannes Tous Droits Réservés. Développé par ',
+      faq: 'FAQ',
       terms: 'Conditions Générales',
-      cookiePolicy: 'Politique de Cookies'
+      cookiePolicy: 'Politique de Confidentialité'
     },
   },
   en: {
@@ -129,9 +130,10 @@ export const dictionary = {
     },
 
     footer: {
-      rights: 'Serrurier Cannes all rights reserved. Powered by ',
+      rights: 'Serrurier Cannes All Rights Reserved. Powered by ',
+      faq: 'FAQ',
       terms: 'Terms of Service',
-      cookiePolicy: 'Cookie Policy'
+      cookiePolicy: 'Privacy Policy'
     }
   }
 }

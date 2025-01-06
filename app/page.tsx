@@ -278,6 +278,13 @@ export default function Home() {
             />
             <div className="flex flex-wrap justify-center gap-4 text-sm text-gray-600">
               <Link 
+                href="/faq" 
+                className="hover:text-red-600 transition-colors"
+              >
+                {t('footer.faq')}
+              </Link>
+              <span className="text-gray-400">•</span>
+              <Link 
                 href="/terms" 
                 className="hover:text-red-600 transition-colors"
               >
@@ -285,7 +292,7 @@ export default function Home() {
               </Link>
               <span className="text-gray-400">•</span>
               <Link 
-                href="/cookie-policy" 
+                href="/privacy-policy" 
                 className="hover:text-red-600 transition-colors"
               >
                 {t('footer.cookiePolicy')}
@@ -299,7 +306,7 @@ export default function Home() {
                 target="_blank" 
                 rel="noopener noreferrer"
               >
-                Neura AI
+                Neura AI 
               </Link>
             </p>
           </div>

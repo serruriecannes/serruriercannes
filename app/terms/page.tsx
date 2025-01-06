@@ -10,7 +10,7 @@ export default function Terms() {
     <div className="min-h-screen bg-white dark:bg-black">
       <div className="container mx-auto px-4 py-12">
         <h1 className="text-3xl font-bold mb-8 text-gray-900 dark:text-white">
-          {locale === 'fr' ? "Conditions Générales d'Utilisation" : "Terms of Service"}
+          {locale === 'fr' ? "Serrurier Cannes - Conditions Générales d'Utilisation" : "Terms of Service"}
         </h1>
 
         <div className="prose dark:prose-invert max-w-none">
