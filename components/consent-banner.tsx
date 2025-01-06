@@ -15,12 +15,25 @@ export function ConsentBanner() {
     const hasConsented = localStorage.getItem('cookieConsent')
     if (!hasConsented) {
       setShowBanner(true)
+    } else {
+      // If user has already consented, initialize GTM
+      initializeGTM()
     }
   }, [])
+
+  const initializeGTM = () => {
+    // Push consent to dataLayer
+    window.dataLayer = window.dataLayer || [];
+    window.dataLayer.push({
+      'event': 'userConsent',
+      'consent': true
+    });
+  }
 
   const acceptConsent = () => {
     localStorage.setItem('cookieConsent', 'true')
     setShowBanner(false)
+    initializeGTM()
   }
 
   if (!showBanner) return null
@@ -45,7 +58,10 @@ export function ConsentBanner() {
               className="text-red-400 hover:text-red-300 underline"
             >
               {locale === 'fr' ? "conditions d'utilisation" : "terms of service"}
-            </Link>.
+            </Link>
+            {locale === 'fr' 
+              ? ". Nous utilisons des cookies pour améliorer votre expérience."
+              : ". We use cookies to improve your experience."}
           </p>
         </div>
         <div className="flex items-center gap-4">
