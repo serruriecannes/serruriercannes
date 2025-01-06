@@ -64,8 +64,10 @@ export const dictionary = {
     },
 
     footer: {
-      rights: 'Serrurier Cannes tous droits réservés. Développé par '
-    }
+      rights: 'Serrurier Cannes tous droits réservés. Développé par ',
+      terms: 'Conditions Générales',
+      cookiePolicy: 'Politique de Cookies'
+    },
   },
   en: {
     title: 'Locksmith Cannes - 24/7 Locksmith Service',
@@ -127,7 +129,9 @@ export const dictionary = {
     },
 
     footer: {
-      rights: 'Serrurier Cannes all rights reserved. Powered by '
+      rights: 'Serrurier Cannes all rights reserved. Powered by ',
+      terms: 'Terms of Service',
+      cookiePolicy: 'Cookie Policy'
     }
   }
 }

@@ -10,7 +10,7 @@ import { Header } from "@/components/ui/header"
 import { useLanguage } from "@/providers/language-provider"
 
 export default function Home() {
-  const { t } = useLanguage()
+  const { t, locale } = useLanguage()
   const whatsappLink = `https://wa.me/+33769308074?text=${encodeURIComponent(t('whatsappMessage'))}`
   const phoneNumber = "+33769308074"
   const emailAddress = "contact@cannesserrurier.fr"
@@ -267,20 +267,42 @@ export default function Home() {
 
       {/* Footer */}
       <footer className="border-t mt-12">
-        <div className="container mx-auto px-4 py-6 flex flex-col items-center gap-4">
-          <Image 
-            src="/cannesserrurier.fr_-_logo.png"
-            alt="Cannes Serrurier"
-            width={240}
-            height={80}
-            className="h-20 w-auto"
-          />
-          <p className="text-center text-gray-600">
-            © {new Date().getFullYear()} {t('footer.rights')}{' '}
-            <Link href="https://meetneura.ai" className="text-blue-600 hover:underline" target="_blank" rel="noopener noreferrer">
-              Neura AI
-            </Link>
-          </p>
+        <div className="container mx-auto px-4 py-6">
+          <div className="flex flex-col items-center gap-6">
+            <Image 
+              src="/cannesserrurier.fr_-_logo.png"
+              alt="Cannes Serrurier"
+              width={240}
+              height={80}
+              className="h-20 w-auto"
+            />
+            <div className="flex flex-wrap justify-center gap-4 text-sm text-gray-600">
+              <Link 
+                href="/terms" 
+                className="hover:text-red-600 transition-colors"
+              >
+                {t('footer.terms')}
+              </Link>
+              <span className="text-gray-400">•</span>
+              <Link 
+                href="/cookie-policy" 
+                className="hover:text-red-600 transition-colors"
+              >
+                {t('footer.cookiePolicy')}
+              </Link>
+            </div>
+            <p className="text-center text-gray-600">
+              © {new Date().getFullYear()} {t('footer.rights')}{' '}
+              <Link 
+                href="https://meetneura.ai" 
+                className="text-blue-600 hover:underline" 
+                target="_blank" 
+                rel="noopener noreferrer"
+              >
+                Neura AI
+              </Link>
+            </p>
+          </div>
         </div>
       </footer>
     </div>
