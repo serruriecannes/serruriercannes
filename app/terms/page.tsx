@@ -10,142 +10,140 @@ export default function Terms() {
     <div className="min-h-screen bg-white dark:bg-black">
       <div className="container mx-auto px-4 py-12">
         <h1 className="text-3xl font-bold mb-8 text-gray-900 dark:text-white">
-          {locale === 'fr' ? "Conditions Générales et FAQ" : "Terms of Service and FAQ"}
+          {locale === 'fr' ? "Conditions Générales d'Utilisation" : "Terms of Service"}
         </h1>
 
         <div className="prose dark:prose-invert max-w-none">
-          {/* About Us Section */}
+          {/* Introduction */}
           <section className="mb-12">
-            <h2 className="text-2xl font-semibold mb-6 text-gray-800 dark:text-gray-200">
-              {locale === 'fr' ? "À propos de notre entreprise" : "About Our Company"}
-            </h2>
-            <div className="space-y-6">
-              <div>
-                <h3 className="text-xl font-medium mb-2 text-gray-800 dark:text-gray-200">
-                  {locale === 'fr' ? "Qui sommes-nous ?" : "Who are we?"}
-                </h3>
-                <p className="text-gray-700 dark:text-gray-300">
-                  {locale === 'fr' 
-                    ? "Serrurier Cannes est un service de serrurerie professionnel basé à Cannes, dirigé par Gaspare Russo, avec plus de 15 ans d'expérience. Nous sommes spécialisés dans la réparation et l'installation de serrures, ainsi que dans la fourniture de solutions de sécurité pour les particuliers et les entreprises."
-                    : "Serrurier Cannes is a professional locksmith service based in Cannes, led by Gaspare Russo, with over 15 years of experience. We specialize in lock repair and installation, as well as providing security solutions for individuals and businesses."}
-                </p>
-              </div>
-              <div>
-                <h3 className="text-xl font-medium mb-2 text-gray-800 dark:text-gray-200">
-                  {locale === 'fr' ? "Zone d'intervention" : "Service Area"}
-                </h3>
-                <p className="text-gray-700 dark:text-gray-300">
-                  {locale === 'fr'
-                    ? "Nous intervenons principalement à Cannes et dans les communes environnantes. Contactez-nous pour vérifier si nous couvrons votre secteur."
-                    : "We mainly operate in Cannes and surrounding communities. Contact us to check if we cover your area."}
-                </p>
-              </div>
-            </div>
+            <p className="text-gray-700 dark:text-gray-300">
+              {locale === 'fr' 
+                ? "En accédant à ce site web, vous acceptez d'être lié par ces conditions d'utilisation, toutes les lois et réglementations applicables. Si vous n'acceptez pas ces conditions, vous ne devez pas utiliser ce site."
+                : "By accessing this website, you agree to be bound by these terms of service, all applicable laws and regulations. If you do not agree with these terms, you must not use this site."}
+            </p>
           </section>
 
-          {/* Services Section */}
+          {/* Data Collection */}
           <section className="mb-12">
             <h2 className="text-2xl font-semibold mb-6 text-gray-800 dark:text-gray-200">
-              {locale === 'fr' ? "Nos Services" : "Our Services"}
+              {locale === 'fr' ? "Collecte de Données" : "Data Collection"}
             </h2>
+            <p className="text-gray-700 dark:text-gray-300 mb-4">
+              {locale === 'fr'
+                ? "Nous collectons les informations suivantes :"
+                : "We collect the following information:"}
+            </p>
             <ul className="list-disc pl-6 space-y-2 text-gray-700 dark:text-gray-300">
-              {locale === 'fr' ? (
-                <>
-                  <li>Installation et réparation de serrures</li>
-                  <li>Création de doubles de clés</li>
-                  <li>Dépannage d'urgence</li>
-                  <li>Audit et solutions de sécurité</li>
-                  <li>Contrats de maintenance pour professionnels et copropriétés</li>
-                  <li>Installation de tous types de serrures (mécaniques, électroniques, connectées, haute sécurité)</li>
-                </>
-              ) : (
-                <>
-                  <li>Lock installation and repair</li>
-                  <li>Key duplication</li>
-                  <li>Emergency services</li>
-                  <li>Security audit and solutions</li>
-                  <li>Maintenance contracts for professionals and co-owned properties</li>
-                  <li>Installation of all types of locks (mechanical, electronic, connected, high security)</li>
-                </>
-              )}
+              <li>{locale === 'fr' 
+                ? "Informations de contact (nom, email, téléphone) lorsque vous nous contactez"
+                : "Contact information (name, email, phone) when you contact us"}</li>
+              <li>{locale === 'fr'
+                ? "Données de navigation via Google Analytics"
+                : "Navigation data through Google Analytics"}</li>
+              <li>{locale === 'fr'
+                ? "Cookies nécessaires au fonctionnement du site"
+                : "Cookies necessary for website functionality"}</li>
             </ul>
           </section>
 
-          {/* Intervention Details */}
+          {/* Usage of Data */}
           <section className="mb-12">
             <h2 className="text-2xl font-semibold mb-6 text-gray-800 dark:text-gray-200">
-              {locale === 'fr' ? "Modalités d'intervention" : "Service Details"}
+              {locale === 'fr' ? "Utilisation des Données" : "Use of Data"}
             </h2>
-            <div className="space-y-6">
-              <div>
-                <h3 className="text-xl font-medium mb-2 text-gray-800 dark:text-gray-200">
-                  {locale === 'fr' ? "Horaires et délais" : "Hours and Response Times"}
-                </h3>
-                <ul className="list-disc pl-6 space-y-2 text-gray-700 dark:text-gray-300">
-                  <li>{locale === 'fr' 
-                    ? "Disponibilité : 24h/24 et 7j/7, y compris week-ends et jours fériés"
-                    : "Availability: 24/7, including weekends and holidays"}</li>
-                  <li>{locale === 'fr'
-                    ? "Temps d'intervention d'urgence : sous 10 minutes dans la région de Cannes"
-                    : "Emergency response time: within 10 minutes in the Cannes area"}</li>
-                  <li>{locale === 'fr'
-                    ? "Installations programmées : rendez-vous sous 24-48h"
-                    : "Scheduled installations: appointments within 24-48h"}</li>
-                </ul>
-              </div>
-            </div>
+            <p className="text-gray-700 dark:text-gray-300 mb-4">
+              {locale === 'fr'
+                ? "Vos données sont utilisées pour :"
+                : "Your data is used for:"}
+            </p>
+            <ul className="list-disc pl-6 space-y-2 text-gray-700 dark:text-gray-300">
+              <li>{locale === 'fr' 
+                ? "Vous fournir nos services de serrurerie"
+                : "Providing our locksmith services"}</li>
+              <li>{locale === 'fr'
+                ? "Améliorer notre site web et nos services"
+                : "Improving our website and services"}</li>
+              <li>{locale === 'fr'
+                ? "Communiquer avec vous concernant nos services"
+                : "Communicating with you about our services"}</li>
+            </ul>
           </section>
 
-          {/* Payment Section */}
+          {/* GDPR Rights */}
           <section className="mb-12">
             <h2 className="text-2xl font-semibold mb-6 text-gray-800 dark:text-gray-200">
-              {locale === 'fr' ? "Tarification et paiement" : "Pricing and Payment"}
+              {locale === 'fr' ? "Vos Droits (RGPD)" : "Your Rights (GDPR)"}
             </h2>
-            <div className="space-y-6">
-              <div>
-                <h3 className="text-xl font-medium mb-2 text-gray-800 dark:text-gray-200">
-                  {locale === 'fr' ? "Moyens de paiement acceptés" : "Accepted Payment Methods"}
-                </h3>
-                <ul className="list-disc pl-6 space-y-2 text-gray-700 dark:text-gray-300">
-                  <li>{locale === 'fr' ? "Espèces" : "Cash"}</li>
-                  <li>{locale === 'fr' ? "Cartes bancaires" : "Credit Cards"}</li>
-                  <li>{locale === 'fr' ? "Virements bancaires (pour les professionnels)" : "Bank transfers (for professionals)"}</li>
-                </ul>
-              </div>
-            </div>
+            <p className="text-gray-700 dark:text-gray-300 mb-4">
+              {locale === 'fr'
+                ? "Conformément au RGPD, vous disposez des droits suivants :"
+                : "Under GDPR, you have the following rights:"}
+            </p>
+            <ul className="list-disc pl-6 space-y-2 text-gray-700 dark:text-gray-300">
+              <li>{locale === 'fr' 
+                ? "Droit d'accès à vos données personnelles"
+                : "Right to access your personal data"}</li>
+              <li>{locale === 'fr'
+                ? "Droit de rectification de vos données"
+                : "Right to rectify your data"}</li>
+              <li>{locale === 'fr'
+                ? "Droit à l'effacement de vos données"
+                : "Right to erasure of your data"}</li>
+              <li>{locale === 'fr'
+                ? "Droit à la limitation du traitement"
+                : "Right to restrict processing"}</li>
+              <li>{locale === 'fr'
+                ? "Droit à la portabilité des données"
+                : "Right to data portability"}</li>
+              <li>{locale === 'fr'
+                ? "Droit d'opposition au traitement"
+                : "Right to object to processing"}</li>
+            </ul>
           </section>
 
-          {/* Emergency Section */}
+          {/* Contact for GDPR */}
           <section className="mb-12">
             <h2 className="text-2xl font-semibold mb-6 text-gray-800 dark:text-gray-200">
-              {locale === 'fr' ? "Urgences" : "Emergencies"}
+              {locale === 'fr' ? "Contact pour vos Droits RGPD" : "Contact for GDPR Rights"}
             </h2>
-            <div className="space-y-4 text-gray-700 dark:text-gray-300">
-              <p>
-                <strong>{locale === 'fr' ? "En cas de perte de clés :" : "In case of lost keys:"}</strong>
-                {' '}{locale === 'fr' 
-                  ? "Contactez-nous immédiatement au 07 69 30 80 74 pour un dépannage rapide."
-                  : "Contact us immediately at 07 69 30 80 74 for quick assistance."}
-              </p>
-              <p>
-                <strong>{locale === 'fr' ? "Urgence nocturne :" : "Night emergency:"}</strong>
-                {' '}{locale === 'fr'
-                  ? "Notre service est disponible 24/7 au 07 69 30 80 74"
-                  : "Our service is available 24/7 at 07 69 30 80 74"}
-              </p>
-            </div>
+            <p className="text-gray-700 dark:text-gray-300">
+              {locale === 'fr'
+                ? "Pour exercer vos droits ou pour toute question concernant le traitement de vos données, contactez-nous à :"
+                : "To exercise your rights or for any questions about the processing of your data, contact us at:"}
+            </p>
+            <ul className="list-none mt-4 space-y-2 text-gray-700 dark:text-gray-300">
+              <li>Email: contact@cannesserrurier.fr</li>
+              <li>{locale === 'fr' 
+                ? "Téléphone : 07 69 30 80 74"
+                : "Phone: 07 69 30 80 74"}</li>
+            </ul>
           </section>
 
-          {/* Contact Section */}
+          {/* Cookies */}
           <section className="mb-12">
             <h2 className="text-2xl font-semibold mb-6 text-gray-800 dark:text-gray-200">
-              {locale === 'fr' ? "Contact" : "Contact"}
+              {locale === 'fr' ? "Politique de Cookies" : "Cookie Policy"}
             </h2>
-            <div className="space-y-2 text-gray-700 dark:text-gray-300">
-              <p><strong>{locale === 'fr' ? "Téléphone :" : "Phone:"}</strong> 07 69 30 80 74</p>
-              <p><strong>Email:</strong> contact@cannesserrurier.fr</p>
-              <p>{locale === 'fr' ? "Service d'urgence 24/7 disponible" : "24/7 emergency service available"}</p>
-            </div>
+            <p className="text-gray-700 dark:text-gray-300 mb-4">
+              {locale === 'fr'
+                ? "Notre site utilise des cookies pour améliorer votre expérience. Pour plus d'informations, consultez notre "
+                : "Our site uses cookies to improve your experience. For more information, see our "}
+              <Link href="/cookie-policy" className="text-red-600 hover:text-red-700">
+                {locale === 'fr' ? "politique de cookies" : "cookie policy"}
+              </Link>.
+            </p>
+          </section>
+
+          {/* Updates to Terms */}
+          <section className="mb-12">
+            <h2 className="text-2xl font-semibold mb-6 text-gray-800 dark:text-gray-200">
+              {locale === 'fr' ? "Modifications des Conditions" : "Updates to Terms"}
+            </h2>
+            <p className="text-gray-700 dark:text-gray-300">
+              {locale === 'fr'
+                ? "Nous nous réservons le droit de modifier ces conditions à tout moment. Les modifications prennent effet dès leur publication sur ce site."
+                : "We reserve the right to modify these terms at any time. Changes become effective immediately upon posting to this site."}
+            </p>
           </section>
 
           <div className="mt-8">
