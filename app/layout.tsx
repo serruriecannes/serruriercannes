@@ -4,6 +4,8 @@ import Script from 'next/script'
 import './globals.css'
 import { useLanguage, LanguageProvider } from "@/providers/language-provider"
 import { ThemeProvider } from "@/providers/theme-provider"
+import { ConsentBanner } from '@/components/consent-banner'
+
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -82,6 +84,7 @@ export default function RootLayout({
         <ThemeProvider defaultTheme="system">
           <LanguageProvider>
             {children}
+            <ConsentBanner />
           </LanguageProvider>
         </ThemeProvider>
       </body>
