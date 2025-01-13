@@ -1,4 +1,4 @@
-// hooks/useChatbot.ts
+// hooks/useChatbot.ts;
 
 import { useEffect } from 'react'
 
